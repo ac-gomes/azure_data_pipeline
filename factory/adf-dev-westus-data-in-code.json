@@ -1,0 +1,9 @@
+{
+	"name": "adf-dev-westus-data-in-code",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ad8d3428-6533-4f27-9587-927e00a84200",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}
