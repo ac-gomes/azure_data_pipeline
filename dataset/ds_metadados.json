@@ -1,0 +1,90 @@
+{
+	"name": "ds_metadados",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "DataSourceID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProcessName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EnvironmentName",
+				"type": "char"
+			},
+			{
+				"name": "DataSourceName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DataSourceType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DatabaseServerName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DatabaseName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DatabaseSchemaName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DatabaseTableName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SourceFileName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SourceFilePath",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SourceConectionStringSecret",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SourceLoginSecret",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SourcePasswordSecret",
+				"type": "nvarchar"
+			},
+			{
+				"name": "IsActive",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IsIncremental",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreatedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "Metadata",
+			"table": "DataSource"
+		}
+	}
+}
