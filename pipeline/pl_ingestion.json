@@ -1,6 +1,17 @@
 {
 	"name": "pl_ingestion",
 	"properties": {
+		"activities": [
+			{
+				"name": "processo exite",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		],
 		"annotations": []
 	}
 }
