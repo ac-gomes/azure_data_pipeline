@@ -42,7 +42,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT  \n\tProcessName, \n\tEnvironmentName, \n\tDataSourceName, \n\tDatabaseServerName, \n\tDatabaseName, \n\tDatabaseSchemaName, \n\tDatabaseTableName, \n\tIsActive\nFROM [sql-db-adf-metadata].Metadata.DataSource\nWHERE LOWER(EnvironmentName) = '@{variables('init_env')}';",
+							"value": "SELECT  \n\tProcessName, \n\tDatabaseSchemaName, \n\tDatabaseTableName, \n\tIsActive\nFROM [sql-db-adf-metadata].Metadata.DataSource\nWHERE LOWER(EnvironmentName) = '@{variables('init_env')}';",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
