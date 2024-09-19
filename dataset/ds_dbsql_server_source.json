@@ -1,0 +1,12 @@
+{
+	"name": "ds_dbsql_server_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_dev_on_prem",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
