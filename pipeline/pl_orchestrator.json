@@ -77,12 +77,15 @@
 							"value": "valid_process",
 							"activities": [
 								{
-									"name": "exits",
-									"type": "Wait",
+									"name": "run pipeline",
+									"type": "ExecutePipeline",
 									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitTimeInSeconds": 2
+										"waitOnCompletion": true
 									}
 								}
 							]
