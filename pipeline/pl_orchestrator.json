@@ -74,7 +74,18 @@
 					},
 					"cases": [
 						{
-							"value": "valid_process"
+							"value": "valid_process",
+							"activities": [
+								{
+									"name": "exits",
+									"type": "Wait",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"waitTimeInSeconds": 2
+									}
+								}
+							]
 						}
 					],
 					"defaultActivities": [
