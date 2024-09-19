@@ -111,7 +111,8 @@
 		],
 		"parameters": {
 			"process_name": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "process_test"
 			}
 		},
 		"variables": {
