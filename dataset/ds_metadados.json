@@ -2,7 +2,7 @@
 	"name": "ds_metadados",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "ls_metadata",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
