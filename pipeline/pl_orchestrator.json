@@ -54,6 +54,26 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "is valid process",
+				"type": "Switch",
+				"dependsOn": [
+					{
+						"activity": "get env parameters",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"cases": [
+						{
+							"value": "valid_process"
+						}
+					]
+				}
 			}
 		],
 		"variables": {
