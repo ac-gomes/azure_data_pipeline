@@ -42,7 +42,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT  \n\tProcessName, \n\tDatabaseSchemaName, \n\tDatabaseTableName, \n\tIsActive\nFROM [sql-db-adf-metadata].Metadata.DataSource\nWHERE LOWER(EnvironmentName) = '@{variables('init_env')}';",
+							"value": "SELECT  \n\tProcessName, \n\tDatabaseSchemaName, \n\tDatabaseTableName, \n\tIsActive\nFROM [sql-db-adf-metadata].Metadata.DataSource\nWHERE LOWER(EnvironmentName) = '@{variables('init_env')}'\nAND LOWER(ProcessName) = LOWER('@{pipeline().parameters.process_name}');",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -68,14 +68,34 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"on": {
+						"value": "@if(contains(\n    toLower(activity('get env parameters').output.firstRow['ProcessName']), toLower(pipeline().parameters.process_name))\n    ,'valid_process'\n    ,'Default'\n)",
+						"type": "Expression"
+					},
 					"cases": [
 						{
 							"value": "valid_process"
+						}
+					],
+					"defaultActivities": [
+						{
+							"name": "process does not exist",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 3
+							}
 						}
 					]
 				}
 			}
 		],
+		"parameters": {
+			"process_name": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"init_env": {
 				"type": "String"
