@@ -46,7 +46,7 @@
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
-						"isolationLevel": "ReadUncommitted",
+						"isolationLevel": "ReadCommitted",
 						"partitionOption": "None"
 					},
 					"dataset": {
