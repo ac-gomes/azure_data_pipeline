@@ -17,7 +17,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "SELECT TOP (5) * FROM FactInternetSales;",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
+						"isolationLevel": "ReadCommitted",
 						"partitionOption": "None"
 					},
 					"dataset": {
