@@ -77,12 +77,19 @@
 							"value": "Valid",
 							"activities": [
 								{
-									"name": "Existe",
-									"type": "Wait",
+									"name": "run ingestion",
+									"type": "ExecutePipeline",
 									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitTimeInSeconds": 1
+										"pipeline": {
+											"referenceName": "pl_ingestion",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true
 									}
 								}
 							]
