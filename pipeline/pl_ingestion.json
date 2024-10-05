@@ -3,12 +3,37 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Existe",
-				"type": "Wait",
+				"name": "query from source",
+				"type": "Lookup",
 				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_dbsql_server_source",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema_name": {
+								"value": "@pipeline().parameters.schema_name",
+								"type": "Expression"
+							},
+							"table_name": {
+								"value": "@pipeline().parameters.table_name",
+								"type": "Expression"
+							}
+						}
+					}
 				}
 			}
 		],
