@@ -1,0 +1,21 @@
+{
+	"name": "ls_sqldb_dev_onprem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "ACG-NOTE\\MSSQLSERVER_SSAS",
+			"database": "AdventureWorksDW2019",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "dataincode",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzY2ExMjc1ZS0zZDQxLTQ5MjQtYTFmNS05MWQzODcyZWU5OGEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "ir-dev-data-in-code-on-prem",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
