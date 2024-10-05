@@ -89,7 +89,17 @@
 											"referenceName": "pl_ingestion",
 											"type": "PipelineReference"
 										},
-										"waitOnCompletion": true
+										"waitOnCompletion": true,
+										"parameters": {
+											"schema_name": {
+												"value": "@activity('get env parameters').output.firstRow['DatabaseSchemaName']",
+												"type": "Expression"
+											},
+											"table_name": {
+												"value": "@activity('get env parameters').output.firstRow['DatabaseTableName']",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]
