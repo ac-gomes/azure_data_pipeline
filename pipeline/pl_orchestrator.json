@@ -56,7 +56,7 @@
 				}
 			},
 			{
-				"name": "is valid process",
+				"name": "Switch1",
 				"type": "Switch",
 				"dependsOn": [
 					{
@@ -68,37 +68,7 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"on": {
-						"value": "@if(contains(\n    toLower(pipeline().parameters.process_name),\n    toLower(activity('get env parameters').output.firstRow['ProcessName']))\n    ,'Valid'\n    ,'Default'\n)",
-						"type": "Expression"
-					},
-					"cases": [
-						{
-							"value": "Valid",
-							"activities": [
-								{
-									"name": "processo valido",
-									"type": "Wait",
-									"dependsOn": [],
-									"userProperties": [],
-									"typeProperties": {
-										"waitTimeInSeconds": 1
-									}
-								}
-							]
-						}
-					],
-					"defaultActivities": [
-						{
-							"name": "processo nao exite",
-							"type": "Wait",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"waitTimeInSeconds": 1
-							}
-						}
-					]
+					"cases": []
 				}
 			}
 		],
