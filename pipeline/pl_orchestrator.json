@@ -32,7 +32,7 @@
 				],
 				"policy": {
 					"timeout": "0.12:00:00",
-					"retry": 0,
+					"retry": 3,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
@@ -42,10 +42,10 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT  \n\tDataSourceID,\n\tProcessName,\n\tDataSourceName,\n\tDataSourceType, \n\tDatabaseSchemaName, \n\tDatabaseTableName, \n\tIsActive\n\nFROM [sql-db-adf-metadata].Metadata.DataSource\nWHERE LOWER(EnvironmentName) = '@{variables('init_env')}'\nAND LOWER(ProcessName) = LOWER('@{pipeline().parameters.process_name}');",
+							"value": "SELECT  \n\tDataSourceID,\n\tProcessName,\n\tDataSourceName,\n\tDataSourceType, \n\tDatabaseSchemaName, \n\tDatabaseTableName, \n\tIsActive,\n\tGETDATE() as StartDateTime\n\nFROM [sql-db-adf-metadata].Metadata.DataSource\nWHERE LOWER(EnvironmentName) = '@{variables('init_env')}'\nAND LOWER(ProcessName) = LOWER('@{pipeline().parameters.process_name}');",
 							"type": "Expression"
 						},
-						"queryTimeout": "02:00:00",
+						"queryTimeout": "00:05:00",
 						"isolationLevel": "ReadCommitted",
 						"partitionOption": "None"
 					},
@@ -97,6 +97,27 @@
 											},
 											"table_name": {
 												"value": "@activity('get env parameters').output.firstRow['DatabaseTableName']",
+												"type": "Expression"
+											},
+											"process_name": {
+												"value": "@activity('get env parameters').output.firstRow['ProcessName']",
+												"type": "Expression"
+											},
+											"data_sourceid": {
+												"value": "@activity('get env parameters').output.firstRow['DataSourceID']",
+												"type": "Expression"
+											},
+											"start_time": {
+												"value": "@activity('get env parameters').output.firstRow['StartDateTime']",
+												"type": "Expression"
+											},
+											"process_status": "success",
+											"pipeline_runid": {
+												"value": "@pipeline().RunId",
+												"type": "Expression"
+											},
+											"triggeredby_pipeline_runId": {
+												"value": "@pipeline()?.TriggeredByPipelineRunId",
 												"type": "Expression"
 											}
 										}

@@ -50,7 +50,7 @@
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
-					"retry": 0,
+					"retry": 3,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
@@ -139,19 +139,22 @@
 			"table_name": {
 				"type": "string"
 			},
+			"process_name": {
+				"type": "string"
+			},
 			"data_sourceid": {
 				"type": "string"
 			},
 			"start_time": {
 				"type": "string"
 			},
-			"end_time": {
-				"type": "string"
-			},
 			"process_status": {
 				"type": "string"
 			},
 			"pipeline_runid": {
+				"type": "string"
+			},
+			"triggeredby_pipeline_runId": {
 				"type": "string"
 			}
 		},
