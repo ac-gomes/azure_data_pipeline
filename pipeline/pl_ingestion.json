@@ -106,6 +106,30 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "success log",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy Table",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "ls_metadata",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
@@ -113,6 +137,12 @@
 				"type": "string"
 			},
 			"table_name": {
+				"type": "string"
+			},
+			"data_sourceid": {
+				"type": "string"
+			},
+			"startTime": {
 				"type": "string"
 			}
 		},
