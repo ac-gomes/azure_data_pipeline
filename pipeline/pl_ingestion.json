@@ -142,7 +142,16 @@
 			"data_sourceid": {
 				"type": "string"
 			},
-			"startTime": {
+			"start_time": {
+				"type": "string"
+			},
+			"end_time": {
+				"type": "string"
+			},
+			"process_status": {
+				"type": "string"
+			},
+			"pipeline_runid": {
 				"type": "string"
 			}
 		},
