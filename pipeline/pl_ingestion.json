@@ -126,6 +126,42 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureParameters": {
+						"ProcessName": {
+							"value": {
+								"value": "@pipeline().parameters.process_name",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"DataSourceid": {
+							"value": {
+								"value": "@pipeline().parameters.data_sourceid",
+								"type": "Expression"
+							},
+							"type": "Int64"
+						},
+						"StartDateTime": {
+							"value": {
+								"value": "@pipeline().TriggerTime",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"ProcessStatus": {
+							"value": "success",
+							"type": "String"
+						},
+						"PipelineRunID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
 				"linkedServiceName": {
 					"referenceName": "ls_metadata",
 					"type": "LinkedServiceReference"
@@ -152,9 +188,6 @@
 				"type": "string"
 			},
 			"pipeline_runid": {
-				"type": "string"
-			},
-			"triggeredby_pipeline_runId": {
 				"type": "string"
 			}
 		},
