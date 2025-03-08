@@ -127,6 +127,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"storedProcedureName": "[Metadata].[spLogActivity]",
 					"storedProcedureParameters": {
 						"ProcessName": {
 							"value": {
