@@ -19,7 +19,11 @@
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "dataincode",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjNDdlZjE2YS0xNDdmLTQ3YWEtYmUyZC0zYjNkM2NiMzA3ODciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwMTNhNDcyYS0zNTY0LTQ0ODYtYTNlMi00ZTliZGY0MTNhYjciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "ir-dev-data-in-code-on-prem",
+			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
