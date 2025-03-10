@@ -1,0 +1,6 @@
+{
+	"name": "ir-dev-data-in-code-on-prem",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
