@@ -161,6 +161,10 @@
 								"type": "Expression"
 							},
 							"type": "String"
+						},
+						"EndDateTime": {
+							"value": null,
+							"type": "Datetime"
 						}
 					}
 				},
