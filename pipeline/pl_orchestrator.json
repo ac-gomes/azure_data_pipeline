@@ -186,11 +186,15 @@
 							"value": "running",
 							"type": "String"
 						},
-						"PipelineRunID": {
+						"PipelineCallerRunID": {
 							"value": {
 								"value": "@pipeline().RunId",
 								"type": "Expression"
 							},
+							"type": "String"
+						},
+						"PipelineRunID": {
+							"value": null,
 							"type": "String"
 						}
 					}
