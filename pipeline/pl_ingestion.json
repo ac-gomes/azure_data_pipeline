@@ -145,26 +145,29 @@
 							"type": "Int64"
 						},
 						"StartDateTime": {
-							"value": {
-								"value": "@pipeline().TriggerTime",
-								"type": "Expression"
-							},
+							"value": null,
+							"type": "Datetime"
+						},
+						"EndDateTime": {
+							"value": null,
 							"type": "Datetime"
 						},
 						"ProcessStatus": {
 							"value": "success",
 							"type": "String"
 						},
-						"PipelineRunID": {
+						"PipelineCallerRunID": {
 							"value": {
-								"value": "@pipeline().RunId",
+								"value": "@pipeline()?.TriggeredByPipelineRunId",
 								"type": "Expression"
 							},
 							"type": "String"
 						},
-						"EndDateTime": {
-							"value": null,
-							"type": "Datetime"
+						"PipelineRunID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							}
 						}
 					}
 				},
