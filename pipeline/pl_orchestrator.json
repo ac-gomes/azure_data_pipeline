@@ -115,10 +115,6 @@
 											"pipeline_runid": {
 												"value": "@pipeline().RunId",
 												"type": "Expression"
-											},
-											"triggeredby_pipeline_runId": {
-												"value": "@pipeline()?.TriggeredByPipelineRunId",
-												"type": "Expression"
 											}
 										}
 									}
@@ -137,6 +133,71 @@
 							}
 						}
 					]
+				}
+			},
+			{
+				"name": "running log",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "get env parameters",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[Metadata].[spLogActivity]",
+					"storedProcedureParameters": {
+						"ProcessName": {
+							"value": {
+								"value": "@activity('get env parameters').output.firstRow['ProcessName']",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"DataSourceid": {
+							"value": {
+								"value": "@activity('get env parameters').output.firstRow['DataSourceID']",
+								"type": "Expression"
+							},
+							"type": "Int64"
+						},
+						"StartDateTime": {
+							"value": {
+								"value": "@pipeline().TriggerTime",
+								"type": "Expression"
+							},
+							"type": "Datetime"
+						},
+						"EndDateTime": {
+							"value": null,
+							"type": "Datetime"
+						},
+						"ProcessStatus": {
+							"value": "running",
+							"type": "String"
+						},
+						"PipelineRunID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_metadata",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
