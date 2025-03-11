@@ -114,7 +114,7 @@
 							"type": "Datetime"
 						},
 						"ProcessStatus": {
-							"value": "running",
+							"value": "success",
 							"type": "String"
 						},
 						"PipelineCallerRunID": {
