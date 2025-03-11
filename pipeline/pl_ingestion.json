@@ -167,7 +167,8 @@
 							"value": {
 								"value": "@pipeline().RunId",
 								"type": "Expression"
-							}
+							},
+							"type": "String"
 						}
 					}
 				},
