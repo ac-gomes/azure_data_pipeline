@@ -188,7 +188,7 @@
 						},
 						"PipelineCallerRunID": {
 							"value": {
-								"value": "@pipeline()?.TriggeredByPipelineRunId",
+								"value": "@pipeline().RunId",
 								"type": "Expression"
 							},
 							"type": "String"
