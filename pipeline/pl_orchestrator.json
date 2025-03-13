@@ -124,7 +124,7 @@
 					],
 					"defaultActivities": [
 						{
-							"name": "processo nao exite",
+							"name": "processo nao existe",
 							"type": "Wait",
 							"dependsOn": [],
 							"userProperties": [],
